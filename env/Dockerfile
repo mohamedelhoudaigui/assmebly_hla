@@ -24,11 +24,5 @@ RUN git clone https://github.com/mohamedelhoudaigui/assmebly_x86_64.git /home/ub
 # Set working directory to the cloned project
 WORKDIR /home/ubuntu/project
 
-RUN git pull
-
-RUN make
-
-RUN chmod +x main
-
 # Set the default command to run the `main` script
-CMD ["./main"]
+CMD ["bash"]
