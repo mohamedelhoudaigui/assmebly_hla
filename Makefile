@@ -5,17 +5,17 @@ AS = nasm
 LD = ld
 
 # The assembler flags
-ASFLAGS = -f elf
+ASFLAGS = -f elf64
 
 # The linker flags
-LDFLAGS = -o
+LDFLAGS = 
 
 # The target executable
 TARGET = main
 
 # The source and object files
 SRC = ft_strlen.s
-OBJ = $(SRC:.asm=.o)
+OBJ = $(SRC:.s=.o)
 
 # Default target
 all: $(TARGET)
@@ -26,7 +26,7 @@ $(OBJ): $(SRC)
 
 # Rule to link the object file into an executable
 $(TARGET): $(OBJ)
-	$(LD) $(LDFLAGS) $(TARGET) $(OBJ)
+	$(LD) $(LDFLAGS) -o $(TARGET) $(OBJ)
 
 # Clean up build files
 clean:
