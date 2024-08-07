@@ -1,11 +1,11 @@
-# Makefile for assembling and linking an assembly program
+# Makefile for assembling and linking a 32-bit assembly program
 
 # The assembler and linker commands
 AS = nasm
 LD = ld
 
 # The assembler flags
-ASFLAGS = -f elf
+ASFLAGS = -f elf32
 
 # The linker flags
 LDFLAGS = -o
@@ -26,7 +26,7 @@ $(OBJ): $(SRC)
 
 # Rule to link the object file into an executable
 $(TARGET): $(OBJ)
-	$(LD) $(LDFLAGS) $(TARGET) $(OBJ)
+	$(LD) -m elf_i386 $(LDFLAGS) $(TARGET) $(OBJ)
 
 # Clean up build files
 clean:
