@@ -5,7 +5,7 @@ AS = nasm
 LD = ld
 
 # The assembler flags
-ASFLAGS = -f elf64
+ASFLAGS = -f elf
 
 # The linker flags
 LDFLAGS = -o
