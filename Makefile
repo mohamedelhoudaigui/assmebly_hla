@@ -14,8 +14,8 @@ LDFLAGS = -o
 TARGET = hello
 
 # The source and object files
-SRC = hello.asm
-OBJ = hello.o
+SRC = test.asm
+OBJ = $(SRC:.asm=.o)
 
 # Default target
 all: $(TARGET)
