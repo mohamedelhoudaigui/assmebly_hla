@@ -5,7 +5,7 @@ AS = nasm
 LD = ld
 
 # The assembler flags
-ASFLAGS = -f elf
+ASFLAGS = -f elf64
 
 # The linker flags
 LDFLAGS = -o
@@ -14,7 +14,7 @@ LDFLAGS = -o
 TARGET = main
 
 # The source and object files
-SRC = test.asm
+SRC = ft_strlen.s
 OBJ = $(SRC:.asm=.o)
 
 # Default target
