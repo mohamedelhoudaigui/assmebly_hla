@@ -25,5 +25,4 @@ RUN git clone https://github.com/mohamedelhoudaigui/assmebly_x86_64.git /home/ub
 WORKDIR /home/ubuntu/project
 
 # Set the default command to run the `main` script
-CMD ["bash"]
-
+CMD ["./main"]
