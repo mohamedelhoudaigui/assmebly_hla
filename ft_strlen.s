@@ -1,27 +1,41 @@
-section .data
-	msg db 'test register', 0
+;section .data
+;    msg db 'test', 0
+;    len db 0
 
-section .text
-global _start
+;section .text
+;    global _start
 
-_start:
-    ; Call the function
-	mov rdi, msg
-    call print
+;_start:
+;   mov rdi, msg
+;   xor rax, rax
+;   call ft_strlen
 
-    ; Exit the program
-    mov eax, 1          ; syscall number for sys_exit
-    xor ebx, ebx        ; exit code 0
-    int 0x80            ; interrupt to invoke syscall
+;    add rax, 48
+;    mov [len], rax
 
-; Define the function
-print:
-    ; Print the message
-    mov eax, 4          ; syscall number for sys_write
-    mov ebx, 1          ; file descriptor 1 (stdout)
-    mov ecx, [rdi]        ; pointer to the message
-    mov edx, 21         ; message length
-    int 0x80            ; interrupt to invoke syscall
+;    mov rsi, len
+;    call write
 
-    ; Return from the function
-    ret
+;    call exit
+
+; functions can have blocks in them, return value in rax
+ft_strlen:
+    .loop:
+        cmp byte [rdi + rax], 0
+        je .done
+        add rax, 1
+        jmp .loop
+    .done:
+        ret
+
+write:
+	mov rax, 1
+	mov rdi, 1
+	mov rdx, 1
+	syscall
+	ret
+
+exit:
+	mov rax, 60
+    xor rdi, rdi
+    syscall

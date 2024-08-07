@@ -14,7 +14,7 @@ LDFLAGS =
 TARGET = main
 
 # The source and object files
-SRC = ft_strlen.s
+SRC = ft_strcmp.s
 OBJ = $(SRC:.s=.o)
 
 # Default target
@@ -31,3 +31,5 @@ $(TARGET): $(OBJ)
 # Clean up build files
 clean:
 	rm -f $(OBJ) $(TARGET)
+
+re : clean all
