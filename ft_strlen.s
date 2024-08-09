@@ -28,14 +28,14 @@ ft_strlen:
     .done:
         ret
 
-write:
-	mov rax, 1
-	mov rdi, 1
-	mov rdx, 1
-	syscall
-	ret
+;write:
+;	mov rax, 1
+;	mov rdi, 1
+;	mov rdx, 1
+;	syscall
+;	ret
 
-exit:
-	mov rax, 60
-    xor rdi, rdi
-    syscall
+;exit:
+;	mov rax, 60
+;    xor rdi, rdi
+;    syscall

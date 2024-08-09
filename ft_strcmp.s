@@ -1,25 +1,25 @@
-section .data
-	buf1 db 'hello', 0
-	buf2 db 'hello', 0
-	result db 0
+;section .data
+;	buf1 db 'hello', 0
+;	buf2 db 'hello', 0
+;	result db 0
 
-section .text
-	global _start
+;section .text
+;	global _start
 
-_start:
-	xor rax, rax
-	mov rdi, buf1
-	mov rsi, buf2
+;_start:
+;	xor rax, rax
+;	mov rdi, buf1
+;	mov rsi, buf2
 
-	call ft_strcmp
+;	call ft_strcmp
 
-	add rax, 48
-	mov [result], rax
+;	add rax, 48
+;	mov [result], rax
 
-	mov rsi, result
-	mov rdx, 1
-	call write
-	call exit
+;	mov rsi, result
+;	mov rdx, 1
+;	call write
+;	call exit
 
 
 ft_strcmp:
@@ -47,13 +47,14 @@ ft_strcmp:
 		xor rax, rax
 		ret
 
-write:
-	mov rax, 1
-	mov rdi, 1
-	syscall
+;write:
+;	mov rax, 1
+;	mov rdi, 1
+;	syscall
+;	ret
 
 
-exit:
-	mov rax, 60
-	xor rdi, rdi
-	syscall
+;exit:
+;	mov rax, 60
+;	xor rdi, rdi
+;	syscall
